@@ -39,7 +39,7 @@ mexico_census1 <- mexico_c1 %>%
     std_Estado = Estado %>% stri_trans_general("Latin-ASCII") %>%  str_replace_all(" ", "_") %>% tolower,
     source_code = paste(Conglomerado,state_id$Cve_Estado_C3 [match (std_Estado, state_id$std_State_name)],sep="_"),
     Height1 = ifelse(Altura_total > 100, NA, Altura_total),
-    stand_age = ifelse (Edad = 0, NA, Edad)
+    stand_age = ifelse (Edad == 0, NA, Edad)
   ) %>%
   #rename columns to standardised names 
   rename(
