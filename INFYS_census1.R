@@ -296,7 +296,7 @@ merged_files_census1 <- mexico_c1 %>%
 results <- numeric(length(merged_files_census1$Cve_Estado_C3))
 
 for (i in 1:length(merged_files_census1$Cve_Estado_C3)) {
-  if (is.na(to_view_2$Cve_Estado_C3[i])) {
+  if (is.na(merged_files_census1$Cve_Estado_C3[i])) {
     results[i] <- NA  # Assign NA if the value is missing
   } else if (merged_files_census1$Cve_Estado_C3[i] == 1) {
     results[i] <- paste("COL", as.numeric(212), sep = "")
